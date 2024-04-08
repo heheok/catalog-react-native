@@ -32,9 +32,7 @@ function HomeScreen() {
     flexGrow: 1,
   };
 
-  // highlight-theme
   const configuration: Configuration = {
-    // Activate one of your themes.
     tools: [Tool.TEXT, Tool.TEXT_DESIGN, Tool.FILTER],
     trim: {
       maximumDuration: 15.0,
