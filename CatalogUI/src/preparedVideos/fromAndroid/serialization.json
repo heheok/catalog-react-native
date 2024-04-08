@@ -1,0 +1,20 @@
+{
+  "image": {"height": 480, "type": "video", "width": 720},
+  "meta": {
+    "createdAt": "2024-03-18T12:35:48-04:00",
+    "platform": "android",
+    "version": "10.4.1"
+  },
+  "operations": [
+    {
+      "options": {
+        "end": {"x": 1, "y": 0.9218749364217123},
+        "rotation": 0,
+        "start": {"x": 0, "y": 0.07812506357828776}
+      },
+      "type": "transform"
+    },
+    {"options": {"endTime": 13447855000}, "type": "trim"}
+  ],
+  "version": "3.10.0"
+}
