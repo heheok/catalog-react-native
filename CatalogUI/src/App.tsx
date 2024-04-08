@@ -1,6 +1,6 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -8,7 +8,7 @@ import {
   StyleSheet,
   useColorScheme,
   View,
-} from 'react-native';
+} from "react-native";
 
 import {
   Configuration,
@@ -18,14 +18,14 @@ import {
   SerializationExportType,
   VideoFormat,
   VideoCodec,
-} from 'react-native-videoeditorsdk';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {ExampleListItem} from './ExampleListItem';
+} from "react-native-videoeditorsdk";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import { ExampleListItem } from "./ExampleListItem";
 
 const Stack = createNativeStackNavigator();
 
 function HomeScreen() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.white,
@@ -54,9 +54,9 @@ function HomeScreen() {
   async function openAndroidVideo() {
     try {
       const result = await VESDK.openEditor(
-        require('../src/preparedVideos/fromAndroid/original.mp4'),
+        require("../src/preparedVideos/fromAndroid/original.mp4"),
         configuration,
-        require('../src/preparedVideos/fromAndroid/serialization.json'),
+        require("../src/preparedVideos/fromAndroid/serialization.json")
       );
       console.log(result?.video);
     } catch (error) {
@@ -66,9 +66,9 @@ function HomeScreen() {
   async function openIosVideo() {
     try {
       const result = await VESDK.openEditor(
-        require('../src/preparedVideos/fromIos/original.mp4'),
+        require("../src/preparedVideos/fromIos/original.mp4"),
         configuration,
-        require('../src/preparedVideos/fromIos/serialization.json'),
+        require("../src/preparedVideos/fromIos/serialization.json")
       );
       console.log(result?.video);
     } catch (error) {
@@ -78,14 +78,16 @@ function HomeScreen() {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={{...backgroundStyle, marginTop: 15}}>
+        style={{ ...backgroundStyle, marginTop: 15 }}
+      >
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
+          }}
+        >
           <ExampleListItem
             title="Video Prepared on Android"
             description="This video is serialized in Andorid, using VESDK"
@@ -109,7 +111,7 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'IMG.LY for React Native'}}
+          options={{ title: "IMG.LY for React Native" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
