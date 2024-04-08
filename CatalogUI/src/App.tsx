@@ -54,9 +54,9 @@ function HomeScreen() {
   async function openAndroidVideo() {
     try {
       const result = await VESDK.openEditor(
-        require("../src/preparedVideos/fromAndroid/original.mp4"),
+        require("../src/reproduce/original.mp4"),
         configuration,
-        require("../src/preparedVideos/fromAndroid/serialization.json")
+        require("../src/reproduce/and-serialization.json")
       );
       console.log(result?.video);
     } catch (error) {
@@ -66,9 +66,9 @@ function HomeScreen() {
   async function openIosVideo() {
     try {
       const result = await VESDK.openEditor(
-        require("../src/preparedVideos/fromIos/original.mp4"),
+        require("../src/reproduce/original.mp4"),
         configuration,
-        require("../src/preparedVideos/fromIos/serialization.json")
+        require("../src/reproduce/ios-serialization.json")
       );
       console.log(result?.video);
     } catch (error) {
