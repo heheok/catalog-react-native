@@ -58,6 +58,7 @@ function HomeScreen() {
       const result = await VESDK.openEditor(
         require('../src/preparedVideos/fromAndroid/original.mp4'),
         configuration,
+        require('../src/preparedVideos/fromAndroid/serialization.json'),
       );
       console.log(result?.video);
     } catch (error) {
@@ -69,6 +70,7 @@ function HomeScreen() {
       const result = await VESDK.openEditor(
         require('../src/preparedVideos/fromIos/original.mp4'),
         configuration,
+        require('../src/preparedVideos/fromIos/serialization.json'),
       );
       console.log(result?.video);
     } catch (error) {
